@@ -9,7 +9,7 @@ import PIL.Image as pil_image
 import tensorflow as tf
 config = tf.compat.v1.ConfigProto()
 config.gpu_options.allow_growth = True
-tf.enable_eager_execution(config=config)
+tf.compat.v1.enable_eager_execution(config=config)
 
 
 class Dataset(object):
