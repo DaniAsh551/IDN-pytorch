@@ -21,7 +21,7 @@ class Dataset(object):
 
     def __getitem__(self, idx):
         if self.use_fast_loader:
-            hr = tf.read_file(self.image_files[idx])
+            hr = tf.compat.v1.read_file(self.image_files[idx])
             hr = tf.image.decode_jpeg(hr, channels=3)
             hr = pil_image.fromarray(hr.numpy())
         else:
